@@ -4,7 +4,7 @@ services:
     build:
       context: ./ur
     env_file:
-      - ./ur/.env
+      - ./.env
     ports:
       - "5555:5555"
     depends_on:
@@ -18,7 +18,7 @@ services:
     build:
       context: ./server
     env_file:
-      - ./server/.env
+      - ./.env
     ports:
       - "4444:4444"
     restart: unless-stopped
