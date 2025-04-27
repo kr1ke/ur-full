@@ -3,6 +3,8 @@ services:
   frontend:
     build:
       context: ./ur
+    env_file:
+      - ./ur/.env
     ports:
       - "5555:5555"
     depends_on:
