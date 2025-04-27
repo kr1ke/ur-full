@@ -25,11 +25,11 @@ COPY --from=build-stage /app/.output/public /usr/share/nginx/html
 # Copy custom nginx config if needed
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 4545 instead of 80
-EXPOSE 4545
+# Expose port 5555 instead of 80
+EXPOSE 5555
 
-# Configure Nginx to listen on port 4545
-RUN sed -i 's/listen\s*80;/listen 4545;/g' /etc/nginx/conf.d/default.conf
+# Configure Nginx to listen on port 5555
+RUN sed -i 's/listen\s*80;/listen 5555;/g' /etc/nginx/conf.d/default.conf
 
 # Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
