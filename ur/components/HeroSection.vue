@@ -420,7 +420,7 @@
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
           <!-- First card with wrapper -->
           <div
-            class="gradient-border-mask p-4 xl:p-6"
+            class="p-4 xl:p-6"
             style="
               border-radius: 20px;
               background: linear-gradient(

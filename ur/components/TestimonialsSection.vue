@@ -28,10 +28,10 @@
                 </div>
                 
                 <!-- Client Name -->
-                <h3 class="text-xl font-bold text-gray-900 mb-4">{{ testimonial.name }}</h3>
+                <a :href="testimonial.link" target="_blank" class="text-xl hover:underline font-bold text-gray-900 mb-4">{{ testimonial.name }}</a>
                 
                 <!-- Client Position -->
-                <a :href="testimonial.link" target="_blank" class="mb-4 text-gray-900 lg:text-[16px] font-medium">{{ testimonial.position }}</a>
+                <p class="mb-4 text-gray-900 lg:text-[16px] font-medium">{{ testimonial.position }}</p>
                 
                 <!-- Testimonial Content -->
                 <p class="text-gray-700 mt-4">{{ testimonial.content }}</p>
@@ -88,11 +88,11 @@ const testimonials = [
     rating: 5
   },
   {
-    name: 'Елена',
+    name: 'ILONA I.',
     position: 'Частный клиент',
-    content: 'Обратилась по вопросу оформления документов для ИП. Получила квалифицированную консультацию и помощь в подготовке всех необходимых документов. Всё было сделано быстро и качественно. Благодарна за профессионализм и внимательное отношение!',
-    link: 'https://yandex.ru/maps/org/52942668686/reviews?reviews%5BpublicId%5D=1bdxhy3aux2fwxf4nkqw13ne80&si=u7y172qrf0e0y2g0efzb7h5wz4&utm_source=review',
-    photo: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
+    content: 'Я в восторге от профессионалов, которые здесь работают, не могу написать на всеобщее обозрение, чем помогли, но главное решили мой вопрос ! Рекомендую !',
+    link: 'https://yandex.ru/maps/org/52942668686/reviews?reviews%5BpublicId%5D=jb0vv4301xpp36q28b6kdv1p14&si=kwmu0xkm7dq3wna2h2macjzk0m&utm_source=review',
+    photo: 'https://avatars.mds.yandex.net/get-yapic/29310/0o-6/orig',
     rating: 5
   },
   {
