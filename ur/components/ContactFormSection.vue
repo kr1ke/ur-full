@@ -68,9 +68,19 @@
                 <button 
                   type="submit" 
                   class="w-full bg-[#0061FF] cursor-pointer hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-[18px] transition-colors flex items-center justify-center"
+                  :disabled="isLoading"
                 >
-                  <Send class="w-4 h-4 mr-2" />
-                  Отправить заявку
+                  <template v-if="isLoading">
+                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Отправка...
+                  </template>
+                  <template v-else>
+                    <Send class="w-4 h-4 mr-2" />
+                    Отправить заявку
+                  </template>
                 </button>
                 
                 <!-- Privacy Policy Notice -->
@@ -89,7 +99,10 @@
 <script setup>
 import { ref } from 'vue';
 import { Phone, Send } from 'lucide-vue-next';
-import { API_BASE_URL } from '../config';
+import emailjs from '@emailjs/browser';
+
+// Note: For EmailJS to work properly, you need to initialize it with your public key
+emailjs.init('tCwQYkUvvIk2lUAqE');
 
 // Form data
 const formData = ref({
@@ -98,20 +111,32 @@ const formData = ref({
   message: ''
 });
 
+// Loading state
+const isLoading = ref(false);
+
 // Form submission handler
 const submitForm = async () => {
+  // Set loading state to true
+  isLoading.value = true;
+  
   try {
-    // Send form data to backend
-    const response = await fetch(`${API_BASE_URL}/api/contact`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData.value)
-    });
+    // Prepare template parameters
+    const templateParams = {
+      from_name: formData.value.name,
+      phone_number: formData.value.phone,
+      message: formData.value.message,
+      to_email: 'info.legal.help@yandex.ru'
+    };
     
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+    // Send email using EmailJS
+    const response = await emailjs.send(
+      'service_zrqsc6v',  // Service ID
+      'template_ax87o62', // Template ID
+      templateParams
+    );
+    
+    if (response.status !== 200) {
+      throw new Error('Failed to send email');
     }
 
     // Reset form after successful submission
@@ -126,6 +151,9 @@ const submitForm = async () => {
   } catch (error) {
     console.error('Error submitting form:', error);
     alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте снова позже.');
+  } finally {
+    // Set loading state to false regardless of success or failure
+    isLoading.value = false;
   }
 };
 </script>

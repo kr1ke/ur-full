@@ -385,7 +385,7 @@
       <h1
         class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white font-bold leading-[130%] tracking-[3.8px]"
       >
-        <span class="font-medium">Защитим ваши </span>
+        <span class="font-medium">Защитим Ваши </span>
         <span class="font-medium">права</span><br />
         <span class="font-semibold"
           >Профессионально
@@ -395,7 +395,7 @@
       <p
         class="text-xl sm:text-2xl text-white mt-6 max-w-2xl font-normal tracking-[1.2px]"
       >
-        Решим ваш юридический вопрос за 24 часа
+        Решим Ваш юридический вопрос за 24 часа
       </p>
       <button
         style="
