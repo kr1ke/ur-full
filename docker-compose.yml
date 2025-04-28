@@ -15,6 +15,9 @@ services:
 
   # Backend service
   backend:
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     build:
       context: ./server
     env_file:
