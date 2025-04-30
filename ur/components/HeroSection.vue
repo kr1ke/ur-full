@@ -395,7 +395,7 @@
       <p
         class="text-xl sm:text-2xl text-white mt-6 max-w-2xl font-normal tracking-[1.2px]"
       >
-        Решим юридический вопрос за 24 часа
+        Решим вопрос оперативно и гарантированно
       </p>
       <button
         style="

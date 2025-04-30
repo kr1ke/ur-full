@@ -59,7 +59,7 @@
                     v-model="formData.message" 
                     rows="4" 
                     class="w-full resize-none px-4 py-3 bg-gray-100 border border-gray-200 rounded-[18px] focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Введите здесь текст вашего вопроса"
+                    placeholder="Введите здесь текст Вашего вопроса"
                     required
                   />
                 </div>
@@ -147,7 +147,7 @@ const submitForm = async () => {
     };
     
     // Show success message
-    alert('Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+    alert('Заявка успешно отправлена! Мы свяжемся с Вами в ближайшее время.');
   } catch (error) {
     console.error('Error submitting form:', error);
     alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте снова позже.');
