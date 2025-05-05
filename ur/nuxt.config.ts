@@ -20,6 +20,10 @@ export default defineNuxtConfig({
       title: "Юридическая помощь №1 - Юридические услуги в Рязани",
       meta: [
         {
+          name: "yandex-verification",
+          content: "acd90179e79c3d0f"
+        },
+        {
           name: "description",
           content:
             'Профессиональные юридические услуги в Рязани от компании "Юридическая помощь №1". Квалифицированная помощь юристов по различным правовым вопросам. Записывайтесь на консультацию!',
@@ -39,13 +43,12 @@ export default defineNuxtConfig({
             'Профессиональные юридические услуги в Рязани от компании "Юридическая помощь №1". Квалифицированная помощь юристов по различным правовым вопросам. Записывайтесь на консультацию!',
         },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://yrpomosh.ru" },
+        { property: "og:url", content: "https://urpomosh1.ru" },
         { property: "og:image", content: "/images/fon-logo.png" },
-        { name: "format-detection", content: "telephone=no" },
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: "canonical", href: "https://yrpomosh.ru" },
+        { rel: "canonical", href: "https://urpomosh1.ru" },
       ],
       script: [
         {
@@ -55,7 +58,7 @@ export default defineNuxtConfig({
             "@type": "LegalService",
             name: "Юридическая помощь №1",
             image: "/images/fon-logo.png",
-            url: "https://yrpomosh.ru",
+            url: "https://urpomosh1.ru",
             telephone: "+79641616546",
             email: "info.legal.help@yandex.ru",
             description:
