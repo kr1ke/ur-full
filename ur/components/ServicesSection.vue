@@ -130,7 +130,7 @@ const services = [
 
 <style scoped>
 .services-background {
-  background-image: url("https://i.ibb.co/sY9HbKJ/fon-uslugi.png") !important;
+  background-image: url('@/assets/images/fon-uslugi.png');
   background-size: cover !important;
   background-position: center !important;
 }
