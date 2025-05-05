@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   modules: ["nuxt-yandex-metrika", "@nuxtjs/sitemap"],
+  site: {
+    url: 'https://urpomosh1.ru',
+  },
   yandexMetrika: {
     id: '101465129',
     options: {
