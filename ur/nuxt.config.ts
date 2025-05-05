@@ -6,12 +6,18 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ["nuxt-yandex-metrika"],
+  modules: ["nuxt-yandex-metrika", "@nuxtjs/sitemap"],
   yandexMetrika: {
     id: '101465129',
     options: {
       webvisor: true,
+      trackHash: true,
+      trackLinks: true,
+      accurateTrackBounce: true
     }
+  },
+  sitemap: {
+    exclude: ['/admin/**']
   },
   app: {
     head: {
@@ -49,6 +55,16 @@ export default defineNuxtConfig({
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://urpomosh1.ru" },
         { property: "og:image", content: "/images/fon-logo.png" },
+        { name: "yandex", content: "noindex, nofollow" },
+        { name: "googlebot", content: "index, follow" },
+        { name: "robots", content: "index, follow" },
+        { name: "revisit-after", content: "7 days" },
+        { name: "language", content: "Russian" },
+        { name: "author", content: "Юридическая помощь №1" },
+        { name: "geo.region", content: "RU-ru" },
+        { name: "geo.placename", content: "Рязань" },
+        { name: "geo.position", content: "54.629565;39.741917" },
+        { name: "ICBM", content: "54.629565, 39.741917" }
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
