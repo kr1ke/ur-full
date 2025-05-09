@@ -77,7 +77,7 @@
                   line-height: normal;
                 "
               >
-                <Phone class="w-6 h-6 mr-2" />
+                <Phone class="w-6 h-6 mr-2 mt-0.5" />
                 +7 (964) 161-65-46
               </a>
 
@@ -88,7 +88,7 @@
                   target="_blank"
                   class="text-gray-900 transition cursor-pointer"
                 >
-                  <WhatsAppIcon class="w-[30px] h-[30px]" />
+                  <WhatsAppIcon class="fill-black w-[30px] h-[30px]" />
                 </a>
                 <a
                   href="https://t.me/uristryazan1"
@@ -183,7 +183,7 @@
                       target="_blank"
                       class="text-gray-900 transition cursor-pointer"
                     >
-                      <WhatsAppIcon class="w-[30px] h-[30px]" />
+                      <WhatsAppIcon class="fill-black w-[30px] h-[30px]" />
                     </a>
                     <a
                       href="https://t.me/uristryazan1"
@@ -260,7 +260,7 @@
                 line-height: normal;
               "
             >
-              <Phone class="w-6 h-6 mr-2" />
+              <Phone class="w-6 h-6 mr-2 mt-0.5" />
               +7 (964)-161-65-46
             </a>
 
@@ -271,7 +271,7 @@
                 target="_blank"
                 class="text-white hover:text-gray-300 transition cursor-pointer"
               >
-                <WhatsAppIcon class="w-[30px] h-[30px]" />
+                <WhatsAppIcon class="fill-white w-[30px] h-[30px]" />
               </a>
               <a
                 href="https://t.me/uristryazan1"
@@ -344,7 +344,7 @@
               target="_blank"
               class="text-white hover:text-gray-300 transition cursor-pointer"
             >
-              <WhatsAppIcon class="w-[30px] h-[30px]" />
+              <WhatsAppIcon class="fill-white w-[30px] h-[30px]" />
             </a>
             <a
               href="https://t.me/uristryazan1"

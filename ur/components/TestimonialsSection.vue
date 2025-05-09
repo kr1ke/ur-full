@@ -19,7 +19,7 @@
           class="testimonials-swiper"
         >
           <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white rounded-xl shadow-sm overflow-hidden h-[438px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white rounded-xl shadow-sm overflow-hidden h-[338px]">
               <!-- Testimonial Text -->
               <div class="md:col-span-2 py-6 pl-6 max-lg:pr-6">
                 <!-- Star Rating -->

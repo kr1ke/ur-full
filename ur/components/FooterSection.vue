@@ -21,10 +21,10 @@
             <a
               href="https://api.whatsapp.com/send/?phone=79641616546&text&type=phone_number&app_absent=0"
               target="_blank"
-              class="text-white hover:text-green-500 transition-colors"
+              class="text-whit group transition-colors"
               aria-label="WhatsApp"
             >
-              <WhatsAppIcon class="h-7 w-7" />
+              <WhatsAppIcon class="h-7 w-7 fill-white group-hover:fill-green-500 transition-colors" />
             </a>
             <a
               href="https://t.me/uristryazan1"
