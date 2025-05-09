@@ -173,7 +173,7 @@
                       line-height: normal;
                     "
                   >
-                    <Phone class="w-6 h-6 mr-2" />
+                    <Phone class="w-6 h-6 mr-2 mt-0.5" />
                     +7 (964)-161-65-46
                   </a>
 
