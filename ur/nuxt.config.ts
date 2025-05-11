@@ -58,9 +58,9 @@ export default defineNuxtConfig({
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://urpomosh1.ru" },
         { property: "og:image", content: "/images/fon-logo.png" },
-        { name: "yandex", content: "noindex, nofollow" },
-        { name: "googlebot", content: "index, follow" },
-        { name: "robots", content: "index, follow" },
+        { name: "yandex", content: "all" },
+        { name: "googlebot", content: "all" },
+        { name: "robots", content: "all" },
         { name: "revisit-after", content: "7 days" },
         { name: "language", content: "Russian" },
         { name: "author", content: "Юридическая помощь №1" },
@@ -80,15 +80,25 @@ export default defineNuxtConfig({
             "@context": "https://schema.org",
             "@type": "LegalService",
             name: "Юридическая помощь №1",
+            legalName: "Юридическая помощь №1",
+            taxID: "290109614114",
             image: "/images/fon-logo.png",
             url: "https://urpomosh1.ru",
-            telephone: {
-              "@type": "ContactPoint",
-              "telephone": "+79641616546",
-              "contactType": "customer service",
-              "areaServed": "RU",
-              "availableLanguage": ["Russian"]
-            },
+            telephone: "+79641616546",
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+79641616546",
+                contactType: "customer service",
+                areaServed: "RU",
+                availableLanguage: ["Russian"]
+              },
+              {
+                "@type": "ContactPoint",
+                email: "info.legal.help@yandex.ru",
+                contactType: "customer support"
+              }
+            ],
             email: "info.legal.help@yandex.ru",
             description:
               "Профессиональные юридические услуги в Рязани от компании 'Юридическая помощь №1'. Квалифицированная помощь юристов по различным правовым вопросам.",
@@ -96,7 +106,7 @@ export default defineNuxtConfig({
               "@type": "PostalAddress",
               streetAddress: "пр. Первомайский, д. 59",
               addressLocality: "Рязань",
-              postalCode: "",
+              postalCode: "390000",
               addressCountry: "RU",
             },
             geo: {
@@ -172,7 +182,18 @@ export default defineNuxtConfig({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             name: "Юридическая помощь №1",
+            legalName: "ООО Юридическая помощь №1",
+            taxID: "290109614114",
             serviceType: "Юридические услуги",
+            telephone: "+79641616546",
+            email: "info.legal.help@yandex.ru",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "пр. Первомайский, д. 59",
+              addressLocality: "Рязань",
+              postalCode: "390000",
+              addressCountry: "RU"
+            },
             areaServed: {
               "@type": "City",
               name: "Рязань",
@@ -180,7 +201,19 @@ export default defineNuxtConfig({
             provider: {
               "@type": "Organization",
               name: "Юридическая помощь №1",
+              legalName: "ООО Юридическая помощь №1",
+              taxID: "290109614114",
               logo: "/images/fon-logo.png",
+              telephone: "+79641616546",
+              email: "info.legal.help@yandex.ru",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "пр. Первомайский, д. 59",
+                addressLocality: "Рязань",
+                postalCode: "390000",
+                addressCountry: "RU"
+              },
+              url: "https://urpomosh1.ru"
             },
           }),
         },
@@ -223,7 +256,38 @@ export default defineNuxtConfig({
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Юридическая помощь №1",
-            "url": "https://urpomosh1.ru"
+            "url": "https://urpomosh1.ru",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Юридическая помощь №1",
+              "legalName": "ООО Юридическая помощь №1",
+              "taxID": "290109614114"
+            }
+          }),
+        },
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Юридическая помощь №1",
+            "legalName": "Юридическая помощь №1",
+            "taxID": "290109614114",
+            "url": "https://urpomosh1.ru",
+            "logo": "/images/fon-logo.png",
+            "telephone": "+79641616546",
+            "email": "info.legal.help@yandex.ru",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "пр. Первомайский, д. 59",
+              "addressLocality": "Рязань",
+              "postalCode": "390000",
+              "addressCountry": "RU"
+            },
+            "sameAs": [
+              "https://vk.com/uristryazan1",
+              "https://t.me/uristryazan1"
+            ]
           }),
         },
       ],
