@@ -86,13 +86,17 @@
 
         <!-- Logo Section -->
         <div
-          class="w-full lg:w-auto flex justify-start sm:justify-center max-md:justify-center"
+          class="w-full lg:w-auto flex flex-col items-start sm:items-center max-md:items-center"
         >
           <img
             src="/images/fon-logo.png"
             alt="Юридическая помощь"
-            class="object-cover w-21 h-21 sm:w-30 sm:h-30"
+            class="object-cover w-21 h-21 sm:w-30 sm:h-30 mb-3"
           />
+          <div class="text-sm text-gray-500 text-center">
+            <p>Першин Андрей Борисович</p>
+            <p>ИНН: 290109614114</p>
+          </div>
         </div>
       </div>
 
