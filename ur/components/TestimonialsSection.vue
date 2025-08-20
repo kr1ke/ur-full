@@ -37,9 +37,12 @@
                 <p class="text-gray-700 mt-4">{{ testimonial.content }}</p>
               </div>
               
-              <!-- Client Photo -->
-              <div class="hidden md:block">
-                <img :src="testimonial.photo" :alt="testimonial.name" class="h-full w-full object-cover rounded-tr-lg rounded-br-lg">
+              <!-- Client Avatar -->
+              <div v-if="index % 2 === 0 || testimonial.name === 'Максим Андреевич'" class="hidden md:block">
+                <img :src="testimonial.name === 'Максим Андреевич' ? 'https://picsum.photos/400/400?random=401' : getAvatarImage(index)" :alt="testimonial.name" class="h-full w-full object-cover rounded-tr-lg rounded-br-lg">
+              </div>
+              <div v-else class="hidden md:flex items-center justify-center rounded-tr-lg rounded-br-lg" :class="getAvatarColor(testimonial.name)">
+                <span class="text-white text-4xl font-bold">{{ getInitials(testimonial.name) }}</span>
               </div>
             </div>
           </swiper-slide>
@@ -249,27 +252,47 @@ const testimonials = [
     link: '#',
     photo: '/images/testimonial-4.jpg',
     rating: 5
-  },
-  {
-    name: 'Владислав',
-    position: 'Студент',
-    content: 'Помогли с восстановлением в университете после отчисления. Грамотно составили апелляцию и представили мои интересы в комиссии. Теперь продолжаю учебу!',
-    link: '#',
-    photo: '/images/testimonial-1.jpg',
-    rating: 5
-  },
-  {
-    name: 'Галина Петровна',
-    position: 'Продавец',
-    content: 'Была проблема с незаконным увольнением. Юристы помогли восстановиться на работе и взыскать компенсацию за вынужденный прогул. Профессионально и быстро!',
-    link: '#',
-    photo: '/images/testimonial-2.jpg',
-    rating: 5
   }
 ];
 
 // Swiper modules (removed Pagination)
 const modules = [Navigation, Autoplay];
+
+// Helper functions for avatar generation
+const getInitials = (name) => {
+  return name
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase())
+    .join('')
+    .slice(0, 2);
+};
+
+const getAvatarColor = (name) => {
+  const colors = [
+    'bg-red-400',
+    'bg-blue-400', 
+    'bg-green-400',
+    'bg-yellow-400',
+    'bg-purple-400',
+    'bg-pink-400',
+    'bg-indigo-400',
+    'bg-teal-400',
+    'bg-orange-400',
+    'bg-cyan-400'
+  ];
+  
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  
+  return colors[Math.abs(hash) % colors.length];
+};
+
+const getAvatarImage = (index) => {
+  const imageNumber = Math.floor(index / 2) + 1;
+  return `/images/testimonial-${imageNumber}.jpg`;
+};
 
 // Swiper instance
 let swiperInstance = null;
